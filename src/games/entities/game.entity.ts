@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { ReviewedGame } from "src/python-api/entities/reviewed-games.entity";
+import { UnReviewedGame } from "src/python-api/entities/unreviewed-games.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('games')
 export class Game {
@@ -59,29 +61,43 @@ export class Game {
         array: true,
         nullable: true
     })
-    platforms:          String[];
+    platforms:          string[];
 
     @Column('text', {
         array: true,
         nullable: true
     })
-    genres:             String[];
+    genres:             string[];
 
     @Column('text', {
         array: true,
         nullable: true
     })
-    stores:             String[];
+    stores:             string[];
 
     @Column('text', {
         array: true,
         nullable: true
     })
-    tags:               String[];
+    tags:               string[];
 
     @Column('text', {
         nullable: true
     })
-    esrb_rating:        String;
+    esrb_rating:        string;
+
+    @OneToMany(
+        () => ReviewedGame,
+        (reviewedGame) => reviewedGame.idGame,
+        {cascade: true}
+    )
+    review: ReviewedGame
+
+    @OneToMany(
+        () => UnReviewedGame,
+        (unreviewedGame) => unreviewedGame.idGame,
+        { cascade: true }
+    )
+    unReview: UnReviewedGame
 }
 

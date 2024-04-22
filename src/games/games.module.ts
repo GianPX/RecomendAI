@@ -13,6 +13,9 @@ import { ConfigModule } from '@nestjs/config';
     TypeOrmModule.forFeature([Game]),
     CommonModule,
     ConfigModule
+  ],
+  exports: [
+    TypeOrmModule
   ]
 })
 export class GamesModule {}

@@ -2,7 +2,7 @@ import { ApiProperty } from "@nestjs/swagger"
 
 export class Recommendation {
     @ApiProperty()
-    recommendationId: number
+    gameId: number
 
     @ApiProperty()
     imageUrl: string

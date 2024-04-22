@@ -23,31 +23,31 @@ export class GamesService {
     result.results.forEach( game => {
       const [updatedDate, updatedTime] = game.updated.split('T')
 
-      const platforms: String[] = []
+      const platforms: string[] = []
       game.platforms.forEach( platform => {
         if(platform.platform)
           platforms.push(platform.platform.name)
       })
 
-      const genres: String[] = []
+      const genres: string[] = []
       game.genres.forEach( genre => {
         if(genre)
           genres.push(genre.name)
       })
 
-      const stores: String[] = []
+      const stores: string[] = []
       game.stores.forEach( store => {
         if(store.store)
           stores.push(store.store.name)
       })
 
-      const tags: String[] = []
+      const tags: string[] = []
       game.tags.forEach( tag => {
         if(tag)
           tags.push(tag.name)
       })
 
-      let esrb_rating: String
+      let esrb_rating: string
       if(game.esrb_rating) esrb_rating = game.esrb_rating.name
 
       const gameToCreate = {
