@@ -1,3 +1,7 @@
+#AI models
+/api-python/data/cosine_similarity_matrix.pkl
+/api-python/data/kmeans_model.pkl
+
 # compiled output
 /dist
 /node_modules

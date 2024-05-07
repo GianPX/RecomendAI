@@ -14,5 +14,5 @@ docker-compose up
 ```
 6. Levantar el modo de desarrollo ```yarn start:dev```
 7. Revisar los endpoints en ```http://localhost:3000/api```
-
+8. Levantar API de Python que contiene el modelo de IA. Revisar ```api-python/README.md```
 
